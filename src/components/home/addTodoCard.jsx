@@ -59,10 +59,12 @@ const Category = styled.button`
 
 const AddTodoCard = ({ setAddTodoCard, onClickAddTodo }) => {
   const [backgroundColor, setBackgroundColor] = useState("#A7C4DA");
+  // 이 부분은 상수로 분리하는게 좋습니다.
   const [todoContent, setTodoContent] = useState("");
 
   const onChangeTodoContent = (e) => {
     if (e.target.value.length < 50) setTodoContent(e.target.value);
+    // 명시적으로 대괄호를 넣어주는 것이 좋음. (컨벤션)
   };
 
   const onClickSaveAddTodo = () => {
