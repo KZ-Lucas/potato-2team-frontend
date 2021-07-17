@@ -7,8 +7,7 @@ const GlobalStyle = createGlobalStyle`
   * {
       margin: 0;
       padding: 0;
-    }
-    }
+  }
   body, html, #root {
     height: 100%;
     background: #FFB6C1;
@@ -52,12 +51,6 @@ const Banner = styled(Link)`
   text-decoration: none;
 `;
 
-
-
-
-
-
-
 const MainTemplate = ({ children }) => {
   return (
     <>
@@ -65,7 +58,7 @@ const MainTemplate = ({ children }) => {
       <Wrapper>
         <LoginBox>
           <BannerWrapper>
-          <Banner>TodoList</Banner>
+            <Banner>TodoList</Banner>
           </BannerWrapper>
           {children}
        </LoginBox>

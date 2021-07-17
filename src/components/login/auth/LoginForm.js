@@ -64,12 +64,21 @@ const LoginForm = () => {
     userPwd: "",
   });
 
-  const onChangeForm = (e) => {
-    setLoginData({
-      ...loginData,
-      [e.target.name]: e.target.value,
-    });
-    console.log("롸:", loginData);
+  const onChangeForm = ({ target }) => {
+    // 상태관리 시 기존의 상태 변수를 그대로 사용하는 것은 좋지 못한 패턴입니다.
+    // setLoginData({
+    //   ...loginData,
+    //   [e.target.name]: e.target.value,
+    // });
+
+    // 이렇게 쓰면 좋습니다.
+    setLoginData((prevState) => ({
+      ...prevState,
+      [target.name]: target.value
+    }));
+
+    // 해당 구문은 변경 이전의 폼 데이터를 보여줍니다.
+    // console.log("롸:", loginData);
   };
 
   const loginSubmit = async () => {
