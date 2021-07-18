@@ -3,6 +3,45 @@ import styled from "styled-components";
 import { IoMdAdd } from "react-icons/io";
 import { AiOutlineDelete } from "react-icons/ai";
 
+const menu = ({ setAddTodoCard, setCurrentCategory }) => {
+  return (
+    <MenuWrap>
+      <TopMiddleWrap>
+        <AddTodoButton onClick={() => setAddTodoCard(1)}>
+          <IoMdAdd size="40" fill="white" />
+        </AddTodoButton>
+        <Category color="black" onClick={() => setCurrentCategory("all")} />
+        <Category
+          color="#A7C4DA"
+          onClick={() => setCurrentCategory("#A7C4DA")}
+        />
+        <Category
+          color="#818D90"
+          onClick={() => setCurrentCategory("#818D90")}
+        />
+        <Category
+          color="#967A6D"
+          onClick={() => setCurrentCategory("#967A6D")}
+        />
+        <Category
+          color="#E5BBB4"
+          onClick={() => setCurrentCategory("#E5BBB4")}
+        />
+        <Category
+          color="#E4D8D3"
+          onClick={() => setCurrentCategory("#E4D8D3")}
+        />
+      </TopMiddleWrap>
+      <IConButton>
+        <AiOutlineDelete size="40" fill="black" />
+      </IConButton>
+    </MenuWrap>
+  );
+};
+
+export default menu;
+
+
 const MenuWrap = styled.div`
   display: flex;
   flex-direction: column;
@@ -46,41 +85,3 @@ const IConButton = styled.div`
   height: 32px;
   margin-bottom: 32px;
 `;
-
-const menu = ({ setAddTodoCard, setCurrentCategory }) => {
-  return (
-    <MenuWrap>
-      <TopMiddleWrap>
-        <AddTodoButton onClick={() => setAddTodoCard(1)}>
-          <IoMdAdd size="40" fill="white" />
-        </AddTodoButton>
-        <Category color="black" onClick={() => setCurrentCategory("all")} />
-        <Category
-          color="#A7C4DA"
-          onClick={() => setCurrentCategory("#A7C4DA")}
-        />
-        <Category
-          color="#818D90"
-          onClick={() => setCurrentCategory("#818D90")}
-        />
-        <Category
-          color="#967A6D"
-          onClick={() => setCurrentCategory("#967A6D")}
-        />
-        <Category
-          color="#E5BBB4"
-          onClick={() => setCurrentCategory("#E5BBB4")}
-        />
-        <Category
-          color="#E4D8D3"
-          onClick={() => setCurrentCategory("#E4D8D3")}
-        />
-      </TopMiddleWrap>
-      <IConButton>
-        <AiOutlineDelete size="40" fill="black" />
-      </IConButton>
-    </MenuWrap>
-  );
-};
-
-export default menu;

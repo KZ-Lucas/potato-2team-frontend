@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 
-import TodoContent from "./todoContent";
-import DoneContent from "./doneContent";
+import TodoContent from "../../components/home/todoContent";
+import DoneContent from "../../components/home/doneContent";
 
 const GlobalStyle = createGlobalStyle`
   html {

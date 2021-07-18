@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import styled from "styled-components";
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
+import { DefaultColor } from "../../constants/defaultColor";
 
 const CardWrap = styled.div`
   width: 200px;
@@ -58,12 +59,14 @@ const Category = styled.button`
 `;
 
 const AddTodoCard = ({ setAddTodoCard, onClickAddTodo }) => {
-  const [backgroundColor, setBackgroundColor] = useState("#A7C4DA");
+  const [backgroundColor, setBackgroundColor] = useState(DefaultColor);
   // 이 부분은 상수로 분리하는게 좋습니다.
   const [todoContent, setTodoContent] = useState("");
 
   const onChangeTodoContent = (e) => {
-    if (e.target.value.length < 50) setTodoContent(e.target.value);
+    if (e.target.value.length < 50) {
+      setTodoContent(e.target.value);
+    }
     // 명시적으로 대괄호를 넣어주는 것이 좋음. (컨벤션)
   };
 
@@ -74,6 +77,8 @@ const AddTodoCard = ({ setAddTodoCard, onClickAddTodo }) => {
     });
     setAddTodoCard(0);
   };
+
+  const setAddTodoHandler = useCallback(() => setAddTodoCard(0), [setAddTodoCard]);
 
   return (
     <CardWrap color={backgroundColor}>
@@ -110,7 +115,7 @@ const AddTodoCard = ({ setAddTodoCard, onClickAddTodo }) => {
         wrap="on"
       />
       <BottomWarp>
-        <IConButton onClick={() => setAddTodoCard(0)}>
+        <IConButton onClick={setAddTodoHandler}>
           <AiOutlineMinusCircle size="24" />
         </IConButton>
       </BottomWarp>

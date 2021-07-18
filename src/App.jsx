@@ -1,8 +1,8 @@
 import React, { Suspense } from "react";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 
-import LoginPage from "./components/login/loginMain";
-import mainPage from "./components/home/homeMain";
+import LoginPage from "./page/login/loginMain";
+import mainPage from "./page/home/homeMain";
 
 const App = () => {
   return (

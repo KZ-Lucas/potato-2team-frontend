@@ -74,7 +74,7 @@ const TodoContent = () => {
     //   date: "2021.07.15",
     // });
 
-    // 기존 데이터에서 데이터를 변형할 일이 생길 경우 함수형 상태관리를 사용합시다.
+    // 기존 데이터에서 데이터를 변형할 일이 생길 경우 함수형 업데이트 사용합시다.
     setTodoList((prevState) => 
       prevState.concat({
         color: addItem.color,
@@ -100,27 +100,7 @@ const TodoContent = () => {
           <NoneCard />
         )}
         {
-        /**
-         *  카테고리에 대한 필터를 Array.prototype.map으로 진행하게 되면 렌더링이 필요하지 않은 영역에 대한 대체 컴포넌트가 필히 들어가게됨
-         *  Filter로 처리
-         */
-        // todoList.length ? (
-        //   currentCategory !== "all" ? (
-        //     todoList.map(({ color, todoContent, date }) =>
-        //       color === currentCategory ? (
-        //         <TodoCard color={color} todoContent={todoContent} date={date} />
-        //       ) : (
-        //         <NoneCard />
-        //       )
-        //     )
-        //   ) : (
-        //     todoList.map(({ color, todoContent, date }) => (
-        //       <TodoCard color={color} todoContent={todoContent} date={date} />
-        //     ))
-        //   )
-        // ) : (
-        //   <NoneCard />
-        // )
+
 
         // Key는 Todo별로 Unique  하게 가지고 있는 것이 좋음
         todoList.length ?
